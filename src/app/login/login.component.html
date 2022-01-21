@@ -1,29 +1,54 @@
-<div class="full-section" style="height: 400px;">
-    <p>login works!</p>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Login Modal 
+
+<div class="container mt-3">
+  <img src="../../assets/login-illustration-letter-cubes-forming-word-36025252.jpg"
+  class="d-block w-100 h-100" alt="">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Login
   </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        Name:<input type="text" id="text" value="Firstname" ><br> <br>
-        email:<input type="email" id="t" value="Enter Your Valid addres" ><br> <br>
-        Dob:<input type="date" id="bday" value="Date of 
-        birth" >
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</button>
-          <button type="button" class="btn btn-primary">For Create Account</button>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Signup</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div style="text-align:center;">
+          <div class="container">
+          <form>
+            First Name:<input type="text" #fname ><br><br>
+            Last Name:<input type="text"#lname><br> <br>
+            Email :<input type="email " #em ><br> <br>
+           
+            Password:<input type="password" #pw><br> <br>
+            Confirm Password:<input type="password" #cp><br> <br>
+          
+            <input type="button" value="Signup" (click)="getdata(fname.value,lname.value,em.value,
+            pw.value,cp.value)"><br><br>
+            <input type="button" value="Login" (click)="outdata(fname.value,lname.value,em.value,
+            pw.value,cp.value)">
+        
+            
+        
+            
+           </form>
+          </div>
         </div>
       </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
     </div>
   </div>
 </div>
+

@@ -1,0 +1,63 @@
+<div class="container form-inline">
+    <form #signupForm="ngForm" (ngSubmit)="onsubmit(signupForm.value)">
+        <div class="form-group">
+            <label for="fname">FirstName</label>
+            <input type="text" ngModel required minlength="7" #fname="ngModel" placeholder="Firstname"
+                class="form-control" name="fname">
+            <div class="text text-danger" *ngIf="fname.touched && fname.invalid">
+                Firstname is required
+                <div class="text text-danger" *ngIf="fname.errors?.['minlength']">
+                    firstname must contain 7 letters
+
+                    <div class="text text-success" *ngIf="fname.valid"> Success</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="lname">LastName</label>
+            <input type="text" ngModel required #lname="ngModel" placeholder="Last name" class="form-control"
+                name="lname">
+            <span class="text text-danger" *ngIf="lname.touched && lname.invalid">
+                This field should not be empty
+            </span>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" ngModel required  maxlength="8" #email="ngModel"
+                placeholder="@gmail.com" class="form-control" name="email">
+            <span class="text text-danger" *ngIf="email.errors?.['maxlength']">
+                email must contain letters
+            </span>
+        </div>
+        <div>
+            <label for="pswd">Password</label>
+            <input type="password" ngModel required minlength="7" pattern="[0-9]" #pswd="ngModel" placeholder="Password"
+                class="form-control" name="pswd">
+            <span class="text text-danger" *ngIf=" pswd.errors?.['pattern']&& pswd.errors?.['minlength']">
+                password must be in numbers </span>
+
+            <!-- <span class="text text-success" *ngIf="pswd.touched && pswd.valid"> Successfully created</span>
+           -->
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input type="text" ngModel required #city="ngModel" placeholder="Enter your City" class="form-control"
+                name="city">
+            <span class="text text-danger" *ngIf="city.touched && city.invalid">
+                Must be filled
+            </span>
+        </div>
+         <div>
+            <label for="code">
+                countrycode
+            </label>
+            <input type="number" ngModel required minlength="6" #code="ngModel" placeholder="Zipcode"
+                class="form-control" name="code">
+            <div class="text text-danger invalid-feedback" *ngIf="code.errors?.['minlength']">Zipcode contain 6 numbers</div>
+        </div>
+        
+            <button [disabled]="signupForm.valid" class="btn btn-primary" #signup (click)="onsubmit(signup.value)">Submit</button>
+        
+
+    </form>
+</div>

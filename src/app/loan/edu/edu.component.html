@@ -1,0 +1,34 @@
+<p>edu works!</p>
+<div class="container border border-dark">
+    <img src="../../../assets/loan-wood-block-arrange-business-man-model_42256-1733.jpg"
+    class="d-block w-100 h-100" alt="">
+    <div class="mb-3 text-align:center">
+        Invest Amount:
+        <input type="text" class="form-control" name="" id="invest_amount" placeholder="" class="w-50" #iAmount>
+    </div>
+    <div class="mb-3 text-align:center">
+        Interest:
+        <select class="form-control" name="" id="interest" class="w-50" #interest>
+            <option value="5">5</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <div class="mb-3 text-align:center">
+        Duration
+        <input type="text" class="form-control" name="" id="duration" placeholder="" class="w-50" #duration>
+    </div>
+    <div>
+        <button type="text" class="btn btn-success text-align:center"
+            (click)="calculateValue(iAmount.value,duration.value,interest.value)">calculate</button>
+        <div class="payment">
+            <div class="total">
+                <h3>Simple Interest: {{ total1 }}</h3>
+            </div>
+            <div class="total">
+                <h3>Compound Interest: {{ total2 }}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,3 @@
+Asha :<input type="text" #mymsg>
+<input type="button" value="Send" (click)="send(mymsg.value)">
+<p *ngFor="let msg of msgs ">{{msg}}</p>

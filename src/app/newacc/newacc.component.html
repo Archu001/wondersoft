@@ -1,0 +1,46 @@
+<p>newacc works!</p>
+<div class="list-group ">
+  <a routerLink="acc" class="list-group-item list-group-item-action active" aria-current="true">
+   Create an Account
+  </a>
+  <a [routerLink]="['pay']" class="list-group-item list-group-item-action">Payment</a>
+  <a [routerLink]="['bal']" class="list-group-item list-group-item-action">Balance</a>
+  
+
+  <div class="container  text:center width:50% margin:0 auto height:50%">
+    <div class="border border-primary">
+      <div class="card">
+        <div>
+          Name:<input type="text" class="form-control" placeholder="" #name>
+        </div>
+        <div>
+          Mobile Number:
+          <input type="text" class="form-control" placeholder="" #phone>
+        </div>
+        <div>
+          Account Number:
+          <input type="text" class="form-control" placeholder="" #acc>
+        </div>
+        <div>
+          UPI Number:
+          <input type="text" class="form-control" placeholder="upiid@ybi" #upi>
+        </div>
+        <div>
+          Initial Balance:
+          <input type="text" class="form-control" placeholder="" #initial>
+        </div>
+        <div>
+          Available Balance:
+          <input type="text" class="form-control" placeholder="" #remaining>
+
+        </div>
+        <div class="row">
+          <input type="button" class="p-3 mb-2 bg-primary text-white" value="create" (click)="newacc(name.value,
+         phone.value,acc.value,upi.value,initial.value,remaining.value)">
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,15 @@
 <p>register works!</p>
+  <div class="container mt-3 border border-success " >
+   <img src="../../assets/man-key-near-computer-account-260nw-1499141258.jpg"
+   class= "d-block w-100 h-80"alt="">
+    First Name:<input type="text" #fn >
+    Last Name:<input type="text"#ln><br> <br>
+    Email :<input type="email " #ema ><br> <br>
+   
+    Password:<input type="password" #pwo><br> <br>
+    Confirm Password:<input type="password" #cpp>
+    <input type="button" value="Reset" (click)="out(fn.value,ln.value,ema.value,
+    pwo.value,cpp.value)">
+      
+    
+  </div>

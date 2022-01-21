@@ -1,0 +1,29 @@
+<div class="calculator">
+
+  <h1>Calculator</h1>
+  <div>
+    <input class="result" type="text" placeholder="" readonly value="{{result}}">
+  </div>
+  <div>
+
+    <button class=" long" *ngFor="let longButton of longButtons" (click)="addto(longButton)">{{longButton}}</button>
+    <button class="button" *ngFor="let button of buttons" (click)="addto(button)">{{button}} </button>
+  </div>
+
+
+</div>
+<div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['asha']">Conversation 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['punith']">Convesation 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['direct']">Background</a>
+    </li>
+  </ul>
+
+
+</div>

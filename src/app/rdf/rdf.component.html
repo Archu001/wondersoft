@@ -1,0 +1,23 @@
+<h3>Reactive Forms</h3>
+<div class="container">
+    <form [formGroup]="loginForm">
+        <div class="form-group">
+            <label for="EMail">Email:</label>
+           <input type="text" class="form-control" placeholder="Enter Email"
+           formControlName="email" name="email">
+           <span class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+               email is required
+           </span>
+            
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter Password"
+            formControlName="pswd" name="pswd">
+            <span class="error" *ngIf="loginForm.get('pwsd')?.invalid && loginForm.get('pswd')?.touched">
+                password is required
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

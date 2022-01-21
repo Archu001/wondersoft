@@ -1,0 +1,73 @@
+<p>loan works!</p>
+<div class="container mt-3 border border-dark list group">
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    <a class="dropdown-item list-group-item list-group-item-action " [routerLink]="['/loan','car']">Car Loan</a> |
+    <a class="dropdown-item list-group-item list-group-item-action " [routerLink]="['edu']">Deposit Loan</a> |
+    <img src="../../assets/istockphoto-909772478-612x612.jpg" class=d-block alt="">
+  </button>
+</div>
+
+Loan Modal
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+
+      <div class="modal-header">
+        <h4 class="modal-title">Car Loan</h4>
+
+      </div>
+
+
+      <div class="modal-body" style="background-color: aliceblue;">
+        <div style="text-align:center;">
+          <div class="container " style="padding-top: 30px;text-align: right;">
+            <div class="mb-3">
+              <label for="principle_amount" class="form-label">principle Amount</label>
+              <input type="text" class="form-control" name="" id="principle_amount" placeholder="" class="w-50"
+                #pAmount>
+            </div>
+            <div class="mb-3">
+              <label for="duration" class="form-label px-2">Duration</label>
+              <input type="text" class="form-control" name="" id="duration" placeholder="" class="w-50" #duration>
+            </div>
+            <div class="mb-3">
+              <label for="loan_type" class="form-label">Type Of Loan</label>
+              <select class="form-control" name="" id="loan_type" class="w-50" #loanType>
+                <option value="7">home loan</option>
+                <option value="8">vehicle loan</option>
+                <option value="10">personal loan</option>
+              </select>
+            </div>
+            <div>
+              <button type="text"
+                (click)="calculateValue(pAmount.value, duration.value, loanType.value)">calculate</button>
+              <button type="text">EMI</button>
+              <br>
+              <!-- (click) = "emiValue(pAmount.value, duration.value, loanType.value)" -->
+              <div class="payment">
+               <div class="emi"> 
+                Monthly EMI : {{ emi }}
+              </div>
+
+
+                <div class="total">
+                  <h3>Total Amount Payable: {{ total }}</h3>
+                </div>
+                <!-- <div>
+                  <button type="text" (click)="out(emi)">Send</button>
+                </div>  -->
+           
+              </div>
+
+
+            
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
